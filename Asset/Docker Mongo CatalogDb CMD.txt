@@ -8,23 +8,40 @@ Docker Cmd
 > docker stop e8acf90531ef --"container id"
 > docker rm e8acf90531ef
 > docker ps -a
-> docker image
+> docker images
 > docker rmi e8acf90531ef
 > docker exec -it shopping-mongo /bin/bash
 
+=======================================Docker Mongo Cmd====================================================
+> mongo
+> show dbs
+> Use CatalogDb
+> db.createCollection('Products')
+> db.Products.insertMany([{"Name":"HP Laptop","Category":"Computers","Summary":"Summary","Description":"Description","ImageFile":"ImageFile","Price": 54.95}])
+> db.Products.find({}).pretty();
+> db.Products.remove({})
+> show collections
+
+
+===============================Docker Redis ==========================================
+> docker pull redis
+> docker images
+> docker run -d -p 6379:6379 --name aspnetrun-redis redis
+> docker ps
+> docker logs -f aspnetrun-redis
+> docker rxec -it aspnetrun-redis /bin/bash
+
+=======================================Docker redis Cmd====================================================
+> redis-cli
+> ping
+> set key value
+> get key
+> ser name mehmet
+> get name
+
+
+
 ====================================Run Docker Local Project============================================
 > docker-compose -f .\docker-compose.yml -f .\docker-compose.override.yml up -d
+> docker-compose -f docker-compose.yml -f docker-compose.override.yml up -d
 > docker-compose -f docker-compose.yml -f docker-compose.override.yml down
-
-
-
-
-
-
-
->Use CatalogDb
->db.createCollection('Products')
->db.Products.insertMany([{"Name":"HP Laptop","Category":"Computers","Summary":"Summary","Description":"Description","ImageFile":"ImageFile","Price": 54.95}])
->db.Products.find({}).pretty();
->db.Products.remove({})
->show collections
