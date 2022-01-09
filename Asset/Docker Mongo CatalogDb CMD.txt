@@ -40,6 +40,11 @@ Docker Cmd
 > get name
 
 
+=======================================Docker Postgres Cmd====================================================
+> docker pull postgres
+
+=======================================Docker PGAdmin Cmd====================================================
+> docker pull dpage/pgadmin4
 
 ====================================Run Docker Local Project============================================
 > docker-compose -f .\docker-compose.yml -f .\docker-compose.override.yml up -d
